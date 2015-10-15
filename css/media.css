@@ -1,0 +1,84 @@
+@media screen and (max-width : 800px) {
+/* Contact */
+    .contact_cnt .each_row {
+        margin-bottom: 0;
+    }
+
+    .contact_cnt,
+	.contact_cnt .each_row .w50,
+	.contact_cnt .each_row .w75,
+	.contact_cnt .each_row.question .w88 {
+        width: 100%;
+    }
+
+    .contact_cnt .each_row .w50,
+	.contact_cnt .each_row.question {
+        margin-bottom: 1.563em;
+    }
+
+    .contact_cnt .each_row label.lbl01 {
+        display: none;
+    }
+
+    ul.contact_info {
+        margin-top: 2em;
+    }
+
+    ul.contact_info li {
+        width: 100%;
+    }
+
+    ul.contact_info li:nth-child(3n+2) {
+        width: 100%;
+        padding: 0;
+    }
+
+    #innerPage > .wrapper {
+        overflow: visible;
+    }
+
+    .page_title .more_btn {
+        height: auto;
+        padding: 0.250em;
+        text-indent: -9999px;
+        background: #fff center center url('../images/morefilter_icon.png') no-repeat;
+    }
+
+    .page_title .more_btn img {
+        display: none;
+    }
+
+    .filter_dropdown {
+        width: 110%;
+        margin-left: -5%;
+        margin-right: -5%;
+        border-width: 0 0 1px 0;
+        box-shadow: none;
+        top: 3.4em;
+    }
+
+    ul.filter_cnt_list > li {
+        width: 50%;
+    }
+
+    ul.filter_cnt_list > li .filter_heading {
+        border-width: 1px 0;
+        border-color: #d4d4d4;
+        border-style: solid;
+    }
+
+    ul.filter_cnt_list > li ul.filter_inner_list {
+        height: 150px;
+    }
+
+    ul.filter_cnt_list > li ul.filter_inner_list li span {
+        max-width: 70%;
+    }
+
+    .filter_dropdown .filter_action button,
+	.filter_dropdown .filter_action .defaultBtn {
+        width: auto;
+        min-width: 75px;
+        margin: 0 0.625em;
+    }
+}

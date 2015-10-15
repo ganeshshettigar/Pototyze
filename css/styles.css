@@ -1,22 +1,113 @@
-@charset "UTF-8";
-/* CSS Document */
-.clearfix:before, .clearfix:after{content: ""; display: table}
-.clearfix:after{clear: both;}
-.clearfix{zoom: 1;}
+/*contact_holder*/
 
-.left{
-	float:left;
+.contact_holder {
+    padding: 1.875em 2.188em;
 }
 
-.right{
-	float:right;
+.contact_holder h3 {
+    font: 1.375em/1.136em 'source_sans_proregular' ,Arial,Helvetica,sans-serif;
+    color: #484848;
+    text-align: center;
 }
 
-#main{
-	
+.contact_cnt {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 1.563em;
 }
 
-.wrapper{
-	margin:0 auto;
+.contact_cnt .each_row {
+    margin-bottom: 1.563em;
 }
 
+.contact_cnt .each_row .w50 {
+    width: 50%;
+}
+
+.contact_cnt .each_row .w75 {
+    width: 75%;
+}
+
+.contact_cnt .each_row label.lbl01 {
+    line-height: 35px;
+    width: 25%;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.contact_cnt .each_row .input01 {
+    width: 100%;
+}
+
+.contact_cnt .each_row.question label.lbl01 {
+    width: 12%;
+}
+
+.contact_cnt .each_row.question .w88 {
+    width: 88%;
+}
+
+.contact_cnt .custom-dropdown__select {
+    border: 1px solid #D6D6D6;
+    font: 16px/35px 'source_sans_proregular' ,Arial,Helvetica,sans-serif;
+    color: #484848;
+    height: 35px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.contact_cnt .custom-dropdown::after {
+    background-size: auto 38px;
+}
+
+ul.contact_info li {
+    display: block;
+    float: left;
+    width: 45%;
+    background: #e9eef5;
+    border-radius: 3px;
+    padding: 1em;
+}
+
+ul.contact_info li:nth-child(3n+2) {
+    width: 10%;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+ul.contact_info li img {
+    float: left;
+    display: block;
+}
+
+ul.contact_info li > div {
+    display: block;
+    text-align: center;
+    padding-top: 5px;
+}
+
+ul.contact_info li > div p {
+    font: 1em/1.250em 'source_sans_proregular' ,Arial,Helvetica,sans-serif;
+    color: #484848;
+}
+
+ul.contact_info li > div a,
+ul.contact_info li > div em {
+    font: 1.125em/1.111em 'source_sans_proregular' ,Arial,Helvetica,sans-serif;
+    color: #194991;
+    transition: all 0.5s ease-out 0s;
+}
+
+ul.contact_info li > div a:hover {
+    text-decoration: underline;
+    transition: all 0.5s ease-out 0s;
+}
+
+ul.contact_info li span.or {
+    text-transform: uppercase;
+    font: 1em/3.889em 'source_sans_proregular' ,Arial,Helvetica,sans-serif;
+    color: #f4511e;
+}
+/*END contact_holder*/
