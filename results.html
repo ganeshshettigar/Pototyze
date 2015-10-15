@@ -60,9 +60,122 @@
    </head>
    <body>
       <div id="main">
+         <header id="header">
+            <div class="wrapper clearfix">
+               <a href="#" class="mblNav pullLeft"><img src="images/mob_nav.png" alt=""></a>
+               <div class="nav-overlay"></div>
+               <!-- Shows only in mobile -->
+               
+               <a href="index.html" class="logo pullLeft"><img src="images/h_logo.png" alt=""></a>
+               <div class="headerNav pullRight">
+                  <nav class="pullLeft">
+                     <ul class="navigation clearfix">
+                        <li class="active"><a href="index.html">HOME</a></li>
+                        <!-- <li><a href="#">HOW IT WORKS</a></li> -->
+                        <li><a href="aboutus.html">ABOUT</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                        <li class="mblShow"><a href="#">Sign up</a></li>
+                        <li class="mblShow"><a href="#">Login</a></li>
+                     </ul>
+                  </nav>
+                  <a href="#" class="signIn pullLeft">Sign in</a>
+                  <div class="toolFree pullLeft">
+                     Toll-Free Number
+                     <span>1800-833-4343</span>
+                  </div>
+               </div>
+               <a href="#" class="offers">
+                  <img src="images/h_offers.png" alt="">
+               </a>
+            </div>
+         </header>
+         <!--  -->
          <article class="contentMain" id="innerPage">
             <!--Search Holder-->
-            
+            <div class="search_holder">
+               <form action="#">
+               <fieldset>
+               <div class="wrapper">
+                  <ul class="search_list ApplyHolder clearfix">
+                     <li>
+                        <span class="custom-dropdown custom-dropdown--white">
+                           <select class="custom-dropdown__select" name="" id="" required>
+                              <option value="0" selected="selected">-Within or Outside City-</option>
+                              <option value="1">Within City</option>
+                              <option value="2">Outside City</option>
+                           </select>
+                        </span>
+                     </li>
+                     <li class="fromTo">
+                        <input type="text" placeholder="From" name="from" id="cityFrom" autocomplete="on" required>
+                     </li>
+                     <li class="fromTo">
+                        <input type="text" placeholder="To" name="to" id="cityTo" autocomplete="on" required>
+                     </li>
+                     <li>
+                        <span class="custom-dropdown custom-dropdown--white">
+                           <select class="custom-dropdown__select" name="" id="" required>
+                              <option value="0" selected="selected">-Select city-</option>
+                              <option value="1">Goa</option>
+                              <option value="2">Mumbai</option>
+                              <option value="3">Pune</option>
+                              <option value="4">Bangalore</option>
+                           </select>
+                        </span>
+                     </li>
+                     <li class="dateTime">
+                        <div class="form-group pullLeft">
+                           <div class="input-group date" id="date">
+                              <input type="text" class="form-control" placeholder="Date" name="date" required />
+                              <span class="input-group-addon">&nbsp;</span>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="dateTime">
+                        <div class="form-group pullLeft">
+                           <div class="input-group date" id="time">
+                              <input type="text" class="form-control" placeholder="Time" name="time" required />
+                              <span class="input-group-addon">&nbsp;</span>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="clearfix">
+                        <button type="submit" class="ApplyBtn defaultBtn pullRight">Apply</button>
+                     </li>
+                  </ul>
+                  <ul class="already_search_list ModifySearch clearfix">
+                     <li>
+                        <p class="title">From</p>
+                        <p>Margao</p>
+                     </li>
+                     <li class="line">
+                        <p class="title">To</p>
+                        <p>Taleigaon</p>
+                     </li>
+                     <li>
+                        <p class="title">State</p>
+                        <p>Goa</p>
+                     </li>
+                     <li>
+                        <p class="title">Kms</p>
+                        <p>30 kms <span>(app.)</span></p>
+                     </li>
+                     <li>
+                        <p class="title">Date</p>
+                        <p>3rd Aug 2015</p>
+                     </li>
+                     <li>
+                        <p class="title">Time</p>
+                        <p>10:30 am</p>
+                     </li>
+                     <li class="clearfix">
+                        <button type="button" class="pullRight ModifyBtn defaultBtn">Modify Search</button>
+                     </li>
+                  </ul>
+               </div>
+               </fieldset>
+               </form>
+            </div>
             <!--END Search Holder-->
             <div class="wrapper">
                <div class="page_title clearfix">
@@ -564,6 +677,27 @@
                <!--END Main List-->
             </div>
          </article>
+         <!--  -->
+         <footer id="footer">
+            <div class="wrapper">
+               <div class="clearfix">
+                  <a href="index.html" class="logo pullLeft"><img src="images/f_logo.png" alt=""></a>
+                  <ul class="fNav">
+                     <li><a href="farecalulator.html">FARE CALCULATOR</a></li>
+                     <li><a href="#">TERMS</a></li>
+                     <li><a href="#">PRIVACY POLICY</a></li>
+                     <li><a href="aboutus.html">ABOUT</a></li>
+                     <li><a href="contact.html">CONTACT</a></li>
+                  </ul>
+                  <ul class="fSocial pullRight">
+                     <li><a href="#"><img src="images/f_social01.png" alt=""></a></li>
+                     <li><a href="#"><img src="images/f_social02.png" alt=""></a></li>
+                     <li><a href="#"><img src="images/f_social03.png" alt=""></a></li>
+                  </ul>
+               </div>
+               <p>Copyright © Tempogo.com. 2015-2016  |  All rights reserved</p>
+            </div>
+         </footer>
          <!--  -->
       </div>
       <!-- Main -->
