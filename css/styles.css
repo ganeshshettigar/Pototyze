@@ -1,0 +1,22 @@
+@charset "UTF-8";
+/* CSS Document */
+.clearfix:before, .clearfix:after{content: ""; display: table}
+.clearfix:after{clear: both;}
+.clearfix{zoom: 1;}
+
+.left{
+	float:left;
+}
+
+.right{
+	float:right;
+}
+
+#main{
+	
+}
+
+.wrapper{
+	margin:0 auto;
+}
+
