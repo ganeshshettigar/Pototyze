@@ -1,0 +1,765 @@
+<!DOCTYPE HTML>
+<html lang="en">
+   <head>
+      <!-- Meta Tags -->
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="keywords" content="" />
+      <meta name="description" content="" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+      <!-- Title -->
+      <title>TempoGO! - Move stuff. No Fuss</title>
+      <!-- Favicon icon -->
+      <link rel="shortcut icon" href="images/favicon.ico" />
+      <!-- CSS StyleSheets -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="all">
+      <link rel="stylesheet" type="text/css" href="css/bootstrap-datetimepicker.min.css" media="all">
+      <link rel="stylesheet" type="text/css" href="css/fonts.css" media="all">
+      <link rel="stylesheet" type="text/css" href="css/reset.css" media="all">
+      <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+      <link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.min.css" media="all">
+      <link rel="stylesheet" type="text/css" href="css/media.css" media="all">
+      <!-- prefixfree.min.js for Break free from CSS prefix hell! -->
+      <script type="text/javascript" src="js/prefixfree.min.js"></script> 
+      <!-- html5shiv.min.js & respond.min.js for IE -->
+      <!--[if lt IE 9]>
+      <script type="text/javascript" src="js/html5shiv.min.js"></script>
+      <script type="text/javascript" src="js/respond.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/ie.css" media="all">
+      <![endif]-->
+      <!-- selectivizr-min.js for IE -->
+      <script type="text/javascript" src="js/nwmatcher.js"></script>
+      <!--[if (gte IE 6)&(lte IE 8)]>
+      <script type="text/javascript" src="js/selectivizr-min.js"></script>
+      <noscript>
+         <link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
+      </noscript>
+      <![endif]-->
+      <!-- JQuery & JavaScrip -->
+      <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+      <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+      <script type="text/javascript">
+         function initialize() {
+               var options = {
+                     componentRestrictions: {country: "in"}
+               };
+               
+               var input = document.getElementById('cityFrom');
+               var autocomplete = new google.maps.places.Autocomplete(input, options);
+               var input1 = document.getElementById('cityTo');
+               var autocomplete1 = new google.maps.places.Autocomplete(input1, options);
+         }
+         google.maps.event.addDomListener(window, 'load', initialize);
+      </script>
+      <script type="text/javascript" src="js/moment.min.js"></script>
+      <script type="text/javascript" src="js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
+      <script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script type="text/javascript" src="js/jquery.popupoverlay.js"></script>
+      <script type="text/javascript" src="js/script.js"></script>
+   </head>
+   <body>
+      <div id="main">
+         <header id="header">
+            <div class="wrapper clearfix">
+               <a href="#" class="mblNav pullLeft"><img src="images/mob_nav.png" alt=""></a>
+               <div class="nav-overlay"></div>
+               <!-- Shows only in mobile -->
+               
+               <a href="index.html" class="logo pullLeft"><img src="images/h_logo.png" alt=""></a>
+               <div class="headerNav pullRight">
+                  <nav class="pullLeft">
+                     <ul class="navigation clearfix">
+                        <li class="active"><a href="index.html">HOME</a></li>
+                        <!-- <li><a href="#">HOW IT WORKS</a></li> -->
+                        <li><a href="aboutus.html">ABOUT</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                        <li class="mblShow"><a href="#">Sign up</a></li>
+                        <li class="mblShow"><a href="#">Login</a></li>
+                     </ul>
+                  </nav>
+                  <a href="#" class="signIn pullLeft">Sign in</a>
+                  <div class="toolFree pullLeft">
+                     Toll-Free Number
+                     <span>1800-833-4343</span>
+                  </div>
+               </div>
+               <a href="#" class="offers">
+                  <img src="images/h_offers.png" alt="">
+               </a>
+            </div>
+         </header>
+         <!--  -->
+         <article class="contentMain" id="innerPage">
+            <!--Search Holder-->
+            <div class="search_holder">
+               <form action="#">
+               <fieldset>
+               <div class="wrapper">
+                  <ul class="search_list ApplyHolder clearfix">
+                     <li>
+                        <span class="custom-dropdown custom-dropdown--white">
+                           <select class="custom-dropdown__select" name="" id="" required>
+                              <option value="0" selected="selected">-Within or Outside City-</option>
+                              <option value="1">Within City</option>
+                              <option value="2">Outside City</option>
+                           </select>
+                        </span>
+                     </li>
+                     <li class="fromTo">
+                        <input type="text" placeholder="From" name="from" id="cityFrom" autocomplete="on" required>
+                     </li>
+                     <li class="fromTo">
+                        <input type="text" placeholder="To" name="to" id="cityTo" autocomplete="on" required>
+                     </li>
+                     <li>
+                        <span class="custom-dropdown custom-dropdown--white">
+                           <select class="custom-dropdown__select" name="" id="" required>
+                              <option value="0" selected="selected">-Select city-</option>
+                              <option value="1">Goa</option>
+                              <option value="2">Mumbai</option>
+                              <option value="3">Pune</option>
+                              <option value="4">Bangalore</option>
+                           </select>
+                        </span>
+                     </li>
+                     <li class="dateTime">
+                        <div class="form-group pullLeft">
+                           <div class="input-group date" id="date">
+                              <input type="text" class="form-control" placeholder="Date" name="date" required />
+                              <span class="input-group-addon">&nbsp;</span>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="dateTime">
+                        <div class="form-group pullLeft">
+                           <div class="input-group date" id="time">
+                              <input type="text" class="form-control" placeholder="Time" name="time" required />
+                              <span class="input-group-addon">&nbsp;</span>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="clearfix">
+                        <button type="submit" class="ApplyBtn defaultBtn pullRight">Apply</button>
+                     </li>
+                  </ul>
+                  <ul class="already_search_list ModifySearch clearfix">
+                     <li>
+                        <p class="title">From</p>
+                        <p>Margao</p>
+                     </li>
+                     <li class="line">
+                        <p class="title">To</p>
+                        <p>Taleigaon</p>
+                     </li>
+                     <li>
+                        <p class="title">State</p>
+                        <p>Goa</p>
+                     </li>
+                     <li>
+                        <p class="title">Kms</p>
+                        <p>30 kms <span>(app.)</span></p>
+                     </li>
+                     <li>
+                        <p class="title">Date</p>
+                        <p>3rd Aug 2015</p>
+                     </li>
+                     <li>
+                        <p class="title">Time</p>
+                        <p>10:30 am</p>
+                     </li>
+                     <li class="clearfix">
+                        <button type="button" class="pullRight ModifyBtn defaultBtn">Modify Search</button>
+                     </li>
+                  </ul>
+               </div>
+               </fieldset>
+               </form>
+            </div>
+            <!--END Search Holder-->
+            <div class="wrapper">
+               <div class="page_title clearfix">
+                  <h1 class="pullLeft">Choose the Vehicle</h1>
+                  <div class="pullRight">
+                     <a class="more_btn MoreBtn"><img src="images/morefilter_arw.png" alt="">More Filters</a>
+                     <form action="#">
+                        <fieldset>
+                           <div class="filter_dropdown FilterHolder">
+                              <div class="filter_cnt">
+                                 <ul class="filter_cnt_list clearfix">
+                                    <li>
+                                       <div class="filter_heading">
+                                          <p>Select Goods Type</p>
+                                       </div>
+                                       <ul class="filter_inner_list ScrollPanel">
+                                          <li>
+                                             <label for="chk01" class="lbl01 clearfix">
+                                             <input type="checkbox" class="chk01 pullLeft" id="chk01">
+                                             <span class="pullLeft">All</span>
+                                             </label>
+                                          </li>
+                                          <li>
+                                             <label for="chk02" class="lbl01 clearfix">
+                                             <input type="checkbox" class="chk01 pullLeft" id="chk02">
+                                             <span class="pullLeft">Food/Event</span>
+                                             </label>
+                                          </li>
+                                          <li>
+                                             <label for="chk03" class="lbl01 clearfix">
+                                             <input type="checkbox" class="chk01 pullLeft" id="chk03">
+                                             <span class="pullLeft">Construction Supplies</span>
+                                             </label>
+                                          </li>
+                                          <li>
+                                             <label for="chk04" class="lbl01 clearfix">
+                                             <input type="checkbox" class="chk01 pullLeft" id="chk04">
+                                             <span class="pullLeft">All</span>
+                                             </label>
+                                          </li>
+                                          <li>
+                                             <label for="chk05" class="lbl01 clearfix">
+                                             <input type="checkbox" class="chk01 pullLeft" id="chk05">
+                                             <span class="pullLeft">Food/Event</span>
+                                             </label>
+                                          </li>
+                                          <li>
+                                             <label for="chk06" class="lbl01 clearfix">
+                                             <input type="checkbox" class="chk01 pullLeft" id="chk06">
+                                             <span class="pullLeft">Construction Supplies</span>
+                                             </label>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <div class="filter_heading">
+                                          <p>Tempo Capacity (kg)</p>
+                                       </div>
+                                       <ul class="filter_inner_list ScrollPanel">
+                                          <li>
+                                             <label for="chk07" class="lbl01 clearfix">
+                                             <input type="checkbox" class="chk01 pullLeft" id="chk07">
+                                             <span class="pullLeft">All</span>
+                                             </label>
+                                          </li>
+                                          <li>
+                                             <label for="chk08" class="lbl01 clearfix">
+                                             <input type="checkbox" class="chk01 pullLeft" id="chk08">
+                                             <span class="pullLeft">750kg</span>
+                                             </label>
+                                          </li>
+                                          <li>
+                                             <label for="chk09" class="lbl01 clearfix">
+                                             <input type="checkbox" class="chk01 pullLeft" id="chk09">
+                                             <span class="pullLeft">500kg</span>
+                                             </label>
+                                          </li>
+                                          <li>
+                                             <label for="chk10" class="lbl01 clearfix">
+                                             <input type="checkbox" class="chk01 pullLeft" id="chk10">
+                                             <span class="pullLeft">All</span>
+                                             </label>
+                                          </li>
+                                          <li>
+                                             <label for="chk11" class="lbl01 clearfix">
+                                             <input type="checkbox" class="chk01 pullLeft" id="chk11">
+                                             <span class="pullLeft">750kg</span>
+                                             </label>
+                                          </li>
+                                          <li>
+                                             <label for="chk12" class="lbl01 clearfix">
+                                             <input type="checkbox" class="chk01 pullLeft" id="chk12">
+                                             <span class="pullLeft">500kg</span>
+                                             </label>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <div class="filter_heading">
+                                          <p>Type</p>
+                                       </div>
+                                       <ul class="filter_inner_list ScrollPanel">
+                                          <li>
+                                             <label for="chk13" class="lbl01 clearfix">
+                                             <input type="checkbox" class="chk01 pullLeft" id="chk13">
+                                             <span class="pullLeft">All</span>
+                                             </label>
+                                          </li>
+                                          <li>
+                                             <label for="chk14" class="lbl01 clearfix">
+                                             <input type="checkbox" class="chk01 pullLeft" id="chk14">
+                                             <span class="pullLeft">Mini Truck</span>
+                                             </label>
+                                          </li>
+                                          <li>
+                                             <label for="chk15" class="lbl01 clearfix">
+                                             <input type="checkbox" class="chk01 pullLeft" id="chk15">
+                                             <span class="pullLeft">LCW</span>
+                                             </label>
+                                          </li>
+                                          <li>
+                                             <label for="chk16" class="lbl01 clearfix">
+                                             <input type="checkbox" class="chk01 pullLeft" id="chk16">
+                                             <span class="pullLeft">All</span>
+                                             </label>
+                                          </li>
+                                          <li>
+                                             <label for="chk17" class="lbl01 clearfix">
+                                             <input type="checkbox" class="chk01 pullLeft" id="chk17">
+                                             <span class="pullLeft">Mini Truck</span>
+                                             </label>
+                                          </li>
+                                          <li>
+                                             <label for="chk18" class="lbl01 clearfix">
+                                             <input type="checkbox" class="chk01 pullLeft" id="chk18">
+                                             <span class="pullLeft">LCW</span>
+                                             </label>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <div class="filter_heading">
+                                          <p>Price Range (per km)</p>
+                                       </div>
+                                       <ul class="filter_inner_list ScrollPanel">
+                                          <li>
+                                             <label for="chk19" class="lbl01 clearfix">
+                                             <input type="checkbox" class="chk01 pullLeft" id="chk19">
+                                             <span class="pullLeft">All</span>
+                                             </label>
+                                          </li>
+                                          <li>
+                                             <label for="chk20" class="lbl01 clearfix">
+                                             <input type="checkbox" class="chk01 pullLeft" id="chk20">
+                                             <span class="pullLeft">Rs. 16</span>
+                                             <span class="pullLeft">Mini Truck</span>
+                                             </label>
+                                          </li>
+                                          <li>
+                                             <label for="chk21" class="lbl01 clearfix">
+                                             <input type="checkbox" class="chk01 pullLeft" id="chk21">
+                                             <span class="pullLeft">Rs. 18</span>
+                                             <span class="pullLeft">LCW</span>
+                                             </label>
+                                          </li>
+                                          <li>
+                                             <label for="chk22" class="lbl01 clearfix">
+                                             <input type="checkbox" class="chk01 pullLeft" id="chk22">
+                                             <span class="pullLeft">All</span>
+                                             </label>
+                                          </li>
+                                          <li>
+                                             <label for="chk23" class="lbl01 clearfix">
+                                             <input type="checkbox" class="chk01 pullLeft" id="chk23">
+                                             <span class="pullLeft">Rs. 16</span>
+                                             <span class="pullLeft">Mini Truck</span>
+                                             </label>
+                                          </li>
+                                          <li>
+                                             <label for="chk24" class="lbl01 clearfix">
+                                             <input type="checkbox" class="chk01 pullLeft" id="chk24">
+                                             <span class="pullLeft">Rs. 18</span>
+                                             <span class="pullLeft">LCW</span>
+                                             </label>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                 </ul>
+                              </div>
+                              <div class="filter_action clearfix">
+                                 <button type="submit" class="pullRight defaultBtn">Apply</button>
+                                 <button type="reset" class="pullRight secondaryBtn">Clear All</button>
+                              </div>
+                           </div>
+                        </fieldset>
+                     </form>
+                  </div>
+               </div>
+               <!--Main List-->
+               <ul class="vehicle_list clearfix">
+                  <li>
+                     <div class="img_holder">
+                        <img src="images/vehicle_01.jpg" alt="">
+                        <p class="pl10"><em class="rs">`</em> 5000 <span>Per Trip</span></p>
+                     </div>
+                     <div class="vechical_cnt pl10">
+                        <h2>Tata Ace </h2>
+                        <p>Mini Truck best suited for Household, electronics, construction, furniture goods</p>
+                     </div>
+                     <div class="vechical_decp">
+                        <div class="each_row clearfix">
+                           <div class="pullLeft clearfix">
+                              Capacity:
+                              <span class="pullRight">750 kg</span>
+                           </div>
+                           <div class="pullRight clearfix">
+                              Base fare:
+                              <span class="pullRight"><em class="rs">`</em>1000</span>
+                           </div>
+                        </div>
+                        <div class="each_row clearfix">
+                           <div class="pullLeft clearfix">
+                              Length:
+                              <span class="pullRight">14 Feet</span>
+                           </div>
+                           <div class="pullRight clearfix">
+                              Fare(Rs/Km):
+                              <span class="pullRight"><em class="rs">`</em>50</span>
+                           </div>
+                        </div>
+                     </div>
+                     <a href="#" class="primaryBtn yourDetails_open">BOOK</a>
+                  </li>
+                  <li>
+                     <div class="img_holder">
+                        <img src="images/vehicle_02.jpg" alt="">
+                        <p class="pl10"><em class="rs">`</em> 2645 <span>Per Trip</span></p>
+                     </div>
+                     <div class="vechical_cnt pl10">
+                        <h2>Mahindra Maxximo Plus</h2>
+                        <p>Mini Truck best suited for Household, electronics,construction, furniture goods</p>
+                     </div>
+                     <div class="vechical_decp">
+                        <div class="each_row clearfix">
+                           <div class="pullLeft clearfix">
+                              Capacity:
+                              <span class="pullRight">750 kg</span>
+                           </div>
+                           <div class="pullRight clearfix">
+                              Base fare:
+                              <span class="pullRight"><em class="rs">`</em>1000</span>
+                           </div>
+                        </div>
+                        <div class="each_row clearfix">
+                           <div class="pullLeft clearfix">
+                              Length:
+                              <span class="pullRight">14 Feet</span>
+                           </div>
+                           <div class="pullRight clearfix">
+                              Fare(Rs/Km):
+                              <span class="pullRight"><em class="rs">`</em>50</span>
+                           </div>
+                        </div>
+                     </div>
+                     <a href="#" class="primaryBtn yourDetails_open">BOOK</a>
+                  </li>
+                  <li>
+                     <div class="img_holder">
+                        <img src="images/vehicle_03.jpg" alt="">
+                        <p class="pl10"><em class="rs">`</em> 9843 <span>Per Trip</span></p>
+                     </div>
+                     <div class="vechical_cnt pl10">
+                        <h2>Tata 407</h2>
+                        <p>Mini Truck best suited for Household, electronics, construction, furniture goods</p>
+                     </div>
+                     <div class="vechical_decp">
+                        <div class="each_row clearfix">
+                           <div class="pullLeft clearfix">
+                              Capacity:
+                              <span class="pullRight">750 kg</span>
+                           </div>
+                           <div class="pullRight clearfix">
+                              Base fare:
+                              <span class="pullRight"><em class="rs">`</em>1000</span>
+                           </div>
+                        </div>
+                        <div class="each_row clearfix">
+                           <div class="pullLeft clearfix">
+                              Length:
+                              <span class="pullRight">14 Feet</span>
+                           </div>
+                           <div class="pullRight clearfix">
+                              Fare(Rs/Km):
+                              <span class="pullRight"><em class="rs">`</em>50</span>
+                           </div>
+                        </div>
+                     </div>
+                     <a href="#" class="primaryBtn yourDetails_open">BOOK</a>
+                  </li>
+                  <li>
+                     <div class="img_holder">
+                        <img src="images/vehicle_04.jpg" alt="">
+                        <p class="pl10"><em class="rs">`</em> 5000 <span>Per Trip</span></p>
+                     </div>
+                     <div class="vechical_cnt pl10">
+                        <h2>Tata 407 Turbo</h2>
+                        <p>Mini Truck best suited for Household, electronics,construction, furniture goods</p>
+                     </div>
+                     <div class="vechical_decp">
+                        <div class="each_row clearfix">
+                           <div class="pullLeft clearfix">
+                              Capacity:
+                              <span class="pullRight">750 kg</span>
+                           </div>
+                           <div class="pullRight clearfix">
+                              Base fare:
+                              <span class="pullRight"><em class="rs">`</em>1000</span>
+                           </div>
+                        </div>
+                        <div class="each_row clearfix">
+                           <div class="pullLeft clearfix">
+                              Length:
+                              <span class="pullRight">14 Feet</span>
+                           </div>
+                           <div class="pullRight clearfix">
+                              Fare(Rs/Km):
+                              <span class="pullRight"><em class="rs">`</em>50</span>
+                           </div>
+                        </div>
+                     </div>
+                     <a href="#" class="primaryBtn yourDetails_open">BOOK</a>
+                  </li>
+                  <li>
+                     <div class="img_holder">
+                        <img src="images/vehicle_05.jpg" alt="">
+                        <p class="pl10"><em class="rs">`</em> 2645 <span>Per Trip</span></p>
+                     </div>
+                     <div class="vechical_cnt pl10">
+                        <h2>Tata</h2>
+                        <p>Mini Truck best suited for Household, electronics, construction, furniture goods</p>
+                     </div>
+                     <div class="vechical_decp">
+                        <div class="each_row clearfix">
+                           <div class="pullLeft clearfix">
+                              Capacity:
+                              <span class="pullRight">750 kg</span>
+                           </div>
+                           <div class="pullRight clearfix">
+                              Base fare:
+                              <span class="pullRight"><em class="rs">`</em>1000</span>
+                           </div>
+                        </div>
+                        <div class="each_row clearfix">
+                           <div class="pullLeft clearfix">
+                              Length:
+                              <span class="pullRight">14 Feet</span>
+                           </div>
+                           <div class="pullRight clearfix">
+                              Fare(Rs/Km):
+                              <span class="pullRight"><em class="rs">`</em>50</span>
+                           </div>
+                        </div>
+                     </div>
+                     <a href="#" class="primaryBtn yourDetails_open">BOOK</a>
+                  </li>
+                  <li>
+                     <div class="img_holder">
+                        <img src="images/vehicle_06.jpg" alt="">
+                        <p class="pl10"><em class="rs">`</em> 9843 <span>Per Trip</span></p>
+                     </div>
+                     <div class="vechical_cnt pl10">
+                        <h2>Tata 407</h2>
+                        <p>Mini Truck best suited for Household, electronics,construction, furniture goods</p>
+                     </div>
+                     <div class="vechical_decp">
+                        <div class="each_row clearfix">
+                           <div class="pullLeft clearfix">
+                              Capacity:
+                              <span class="pullRight">750 kg</span>
+                           </div>
+                           <div class="pullRight clearfix">
+                              Base fare:
+                              <span class="pullRight"><em class="rs">`</em>1000</span>
+                           </div>
+                        </div>
+                        <div class="each_row clearfix">
+                           <div class="pullLeft clearfix">
+                              Length:
+                              <span class="pullRight">14 Feet</span>
+                           </div>
+                           <div class="pullRight clearfix">
+                              Fare(Rs/Km):
+                              <span class="pullRight"><em class="rs">`</em>50</span>
+                           </div>
+                        </div>
+                     </div>
+                     <a href="#" class="primaryBtn yourDetails_open">BOOK</a>
+                  </li>
+                  <li>
+                     <div class="img_holder">
+                        <img src="images/vehicle_01.jpg" alt="">
+                        <p class="pl10"><em class="rs">`</em> 5000 <span>Per Trip</span></p>
+                     </div>
+                     <div class="vechical_cnt pl10">
+                        <h2>Tata Ace </h2>
+                        <p>Mini Truck best suited for Household, electronics, construction, furniture goods</p>
+                     </div>
+                     <div class="vechical_decp">
+                        <div class="each_row clearfix">
+                           <div class="pullLeft clearfix">
+                              Capacity:
+                              <span class="pullRight">750 kg</span>
+                           </div>
+                           <div class="pullRight clearfix">
+                              Base fare:
+                              <span class="pullRight"><em class="rs">`</em>1000</span>
+                           </div>
+                        </div>
+                        <div class="each_row clearfix">
+                           <div class="pullLeft clearfix">
+                              Length:
+                              <span class="pullRight">14 Feet</span>
+                           </div>
+                           <div class="pullRight clearfix">
+                              Fare(Rs/Km):
+                              <span class="pullRight"><em class="rs">`</em>50</span>
+                           </div>
+                        </div>
+                     </div>
+                     <a href="#" class="primaryBtn yourDetails_open">BOOK</a>
+                  </li>
+                  <li>
+                     <div class="img_holder">
+                        <img src="images/vehicle_02.jpg" alt="">
+                        <p class="pl10"><em class="rs">`</em> 2645 <span>Per Trip</span></p>
+                     </div>
+                     <div class="vechical_cnt pl10">
+                        <h2>Mahindra Maxximo Plus</h2>
+                        <p>Mini Truck best suited for Household, electronics,construction, furniture goods</p>
+                     </div>
+                     <div class="vechical_decp">
+                        <div class="each_row clearfix">
+                           <div class="pullLeft clearfix">
+                              Capacity:
+                              <span class="pullRight">750 kg</span>
+                           </div>
+                           <div class="pullRight clearfix">
+                              Base fare:
+                              <span class="pullRight"><em class="rs">`</em>1000</span>
+                           </div>
+                        </div>
+                        <div class="each_row clearfix">
+                           <div class="pullLeft clearfix">
+                              Length:
+                              <span class="pullRight">14 Feet</span>
+                           </div>
+                           <div class="pullRight clearfix">
+                              Fare(Rs/Km):
+                              <span class="pullRight"><em class="rs">`</em>50</span>
+                           </div>
+                        </div>
+                     </div>
+                     <a href="#" class="primaryBtn yourDetails_open">BOOK</a>
+                  </li>
+                  <li>
+                     <div class="img_holder">
+                        <img src="images/vehicle_03.jpg" alt="">
+                        <p class="pl10"><em class="rs">`</em> 9843 <span>Per Trip</span></p>
+                     </div>
+                     <div class="vechical_cnt pl10">
+                        <h2>Tata 407</h2>
+                        <p>Mini Truck best suited for Household, electronics, construction, furniture goods</p>
+                     </div>
+                     <div class="vechical_decp">
+                        <div class="each_row clearfix">
+                           <div class="pullLeft clearfix">
+                              Capacity:
+                              <span class="pullRight">750 kg</span>
+                           </div>
+                           <div class="pullRight clearfix">
+                              Base fare:
+                              <span class="pullRight"><em class="rs">`</em>1000</span>
+                           </div>
+                        </div>
+                        <div class="each_row clearfix">
+                           <div class="pullLeft clearfix">
+                              Length:
+                              <span class="pullRight">14 Feet</span>
+                           </div>
+                           <div class="pullRight clearfix">
+                              Fare(Rs/Km):
+                              <span class="pullRight"><em class="rs">`</em>50</span>
+                           </div>
+                        </div>
+                     </div>
+                     <a href="#" class="primaryBtn yourDetails_open">BOOK</a>
+                  </li>
+               </ul>
+               <!--END Main List-->
+            </div>
+         </article>
+         <!--  -->
+         <footer id="footer">
+            <div class="wrapper">
+               <div class="clearfix">
+                  <a href="index.html" class="logo pullLeft"><img src="images/f_logo.png" alt=""></a>
+                  <ul class="fNav">
+                     <li><a href="farecalulator.html">FARE CALCULATOR</a></li>
+                     <li><a href="#">TERMS</a></li>
+                     <li><a href="#">PRIVACY POLICY</a></li>
+                     <li><a href="aboutus.html">ABOUT</a></li>
+                     <li><a href="contact.html">CONTACT</a></li>
+                  </ul>
+                  <ul class="fSocial pullRight">
+                     <li><a href="#"><img src="images/f_social01.png" alt=""></a></li>
+                     <li><a href="#"><img src="images/f_social02.png" alt=""></a></li>
+                     <li><a href="#"><img src="images/f_social03.png" alt=""></a></li>
+                  </ul>
+               </div>
+               <p>Copyright © Tempogo.com. 2015-2016  |  All rights reserved</p>
+            </div>
+         </footer>
+         <!--  -->
+      </div>
+      <!-- Main -->
+      <div id="yourDetails" class="popupMain">
+         <div class="popupHeader">
+            <h4>Enter your details</h4>
+            <a href="#" class="yourDetails_close"><img src="images/popup_close.png" alt=""></a>
+         </div>
+         <div class="popupContent">
+            <form action="#" id="detailsForm">
+               <fieldset>
+                  <input type="text" name="yourName" id="" placeholder="Your Name" required>
+                  <input type="email" name="yourEmail" id="" placeholder="Your Email Address" required>
+                  <input type="tel" name="yourPhoneNo" id="" placeholder="Your Phone no." required>
+                  <button type="submit" class="defaultBtn">CONTINUE</button><!-- fareDetails_open -->
+               </fieldset>
+            </form>
+         </div>
+      </div>
+      <div id="fareDetails" class="popupMain">
+         <div class="popupHeader">
+            <h4>Your Fare Details</h4>
+            <a href="#" class="fareDetails_close"><img src="images/popup_close.png" alt=""></a>
+         </div>
+         <div class="popupContent">
+            <form action="#" id="fareForm">
+               <fieldset>
+                  <ul>
+                     <li>
+                        Approximate Distance <span>20 KM</span>
+                     </li>
+                     <li>
+                        Selected Vehicle <span>TATA ACE</span>
+                     </li>
+                     <li>
+                        Do you need labours?
+                        <input type="number" name="number" id="" value="0">
+                     </li>
+                  </ul>
+                  <div class="totalFare">
+                     TOTAL FARE <span>600</span>
+                  </div>
+                  <p>Waiting charges for Tata Ace is 50 per hour</p>
+                  <button type="button" class="defaultBtn">CONFIRM</button><!-- thankYou_open -->
+               </fieldset>
+            </form>
+         </div>
+      </div>
+      <div id="thankYou" class="popupMain">
+         <div class="popupHeader">
+            <h4>Thank you!</h4>
+            <a href="index.html" class="thankYou_close"><img src="images/popup_close.png" alt=""></a>
+         </div>
+         <div class="popupContent">
+            <form action="#" id="thankyouForm">
+               <fieldset>
+                  <h5>Great! Thanks for booking a Vehicle with us!</h5>
+                  <p>The Vehicle and driver details has been sent to your email Our team will connect with you shortly.</p>
+                  <button type="button" class="defaultBtn">OK</button>
+               </fieldset>
+            </form>
+         </div>
+      </div>
+   </body>
+</html>
