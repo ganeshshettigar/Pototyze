@@ -1868,7 +1868,6 @@ ul.vehicle_list > li .vechical_decp .each_row > div .rs {
 #footer ul.fNav li.active a {
     text-decoration: underline;
 }
-
 #footer .wrapper > p {
     display: block;
     padding: 20px 0;
@@ -1878,7 +1877,6 @@ ul.vehicle_list > li .vechical_decp .each_row > div .rs {
     text-align: center;
     opacity: 0.4;
 }
-
 /*main_section*/
 .main_section {
     margin: 3.125em 0;
