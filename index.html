@@ -1,39 +1,305 @@
 <!DOCTYPE HTML>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<meta name = "viewport" content = "width = device-width,user-scalable = no,initial-scale = 1.0">
-<title></title>
-<link rel="shortcut icon" href="images/favicon.ico" />
-<link rel="stylesheet" type="text/css" href="css/reset.css" media="all" />
-<link rel="stylesheet" type="text/css" href="css/fonts.css" media="all" />
-<link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
-<link rel="stylesheet" type="text/css" href="css/media.css" media="all" />
-<script src="js/prefixFree.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
-<script src="js/script.js"></script>
-<!--[if lt IE 9]>
-<script type="text/javascript" src="js/html5shiv.js"></script>
-<link rel="stylesheet" media="all" type="text/css" href="css/ie.css" />
-<![endif]-->
+<html lang="en">
+   <head>
+      <!-- Meta Tags -->
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="keywords" content="" />
+      <meta name="description" content="" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+      <!-- Title -->
+      <title>TempoGO! - Move stuff. No Fuss</title>
+      <!-- Favicon icon -->
+      <link rel="shortcut icon" href="images/favicon.ico" />
+      <!-- CSS StyleSheets -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="all">
+      <link rel="stylesheet" type="text/css" href="css/bootstrap-datetimepicker.min.css" media="all">
+      <link rel="stylesheet" type="text/css" href="css/fonts.css" media="all">
+      <link rel="stylesheet" type="text/css" href="css/reset.css" media="all">
+      <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+      <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" media="all">
+      <link rel="stylesheet" type="text/css" href="css/owl.carousel.css" media="all">
+      <link rel="stylesheet" type="text/css" href="css/owl.theme.css" media="all">
+      <link rel="stylesheet" type="text/css" href="css/owl.transitions.css" media="all">
+      <link rel="stylesheet" type="text/css" href="css/media.css" media="all">
+      <link rel="stylesheet" type="text/css" href="css/animate.css" media="all">
+      <!-- prefixfree.min.js for Break free from CSS prefix hell! -->
+      <script type="text/javascript" src="js/prefixfree.min.js"></script> 
+      <!-- html5shiv.min.js & respond.min.js for IE -->
+      <!--[if lt IE 9]>
+      <script type="text/javascript" src="js/html5shiv.min.js"></script>
+      <script type="text/javascript" src="js/respond.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/ie.css" media="all">
+      <![endif]-->
+      <!-- selectivizr-min.js for IE -->
+      <script type="text/javascript" src="js/nwmatcher.js"></script>
+      <!--[if (gte IE 6)&(lte IE 8)]>
+      <script type="text/javascript" src="js/selectivizr-min.js"></script>
+      <noscript>
+         <link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
+      </noscript>
+      <![endif]-->
+      <!--[if gte IE 9]>
+      <style type="text/css">
+         .gradient { filter: none; }
+      </style>
+      <![endif]-->
+      <!-- JQuery & JavaScrip -->
+      <script src="js/jquery-1.11.3.min.js"></script>
+      <script src="js/owl.carousel.js"></script>
+      <script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
+      <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+      <script type="text/javascript">
+         function initialize() {
+               var options = {
+                     componentRestrictions: {country: "in"}
+               };
+               
+               var input = document.getElementById('cityFrom');
+               var autocomplete = new google.maps.places.Autocomplete(input, options);
+               var input1 = document.getElementById('cityTo');
+               var autocomplete1 = new google.maps.places.Autocomplete(input1, options);
+         }
+         google.maps.event.addDomListener(window, 'load', initialize);
+      </script>
+      <script src="js/moment.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/bootstrap-datetimepicker.min.js"></script>
+      <script src="js/jquery.popupoverlay.js"></script>
+      <script type="text/javascript" src="js/wow.min.js"></script>
+      <script type="text/javascript">
+         new WOW().init();
+      </script>
+      <script type="text/javascript" src="js/script.js"></script>
+   </head>
+   <body>
+      <div id="main">
+         <header id="header">
+            <div class="wrapper clearfix">
+               <a href="#" class="mblNav pullLeft"><img src="images/mob_nav.png" alt=""></a>
+               <div class="nav-overlay"></div>
+               <!-- Shows only in mobile -->
 
-<!-- For Pseudo class -->
-<script type="text/javascript" src="js/nwmatcher.js"></script>
-<!--[if (gte IE 6)&(lte IE 8)]>
-  <script type="text/javascript" src="js/selectivizr-min.js"></script>
-  <noscript><link rel="stylesheet" type="text/css" href="css/styles.css" media="all" /></noscript>
-<![endif]-->
-</head>
+               <a href="index.html" class="logo pullLeft"><img src="images/h_logo.png" alt=""></a>
+               <div class="headerNav pullRight">
+                  <nav class="pullLeft">
+                     <ul class="navigation clearfix">
+                        <li class="active"><a href="index.html">HOME</a></li>
+                        <!-- <li><a href="#">HOW IT WORKS</a></li> -->
+                        <li><a href="aboutus.html">ABOUT</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                        <li class="mblShow"><a href="#">Sign up</a></li>
+                        <li class="mblShow"><a href="#">Login</a></li>
+                     </ul>
+                  </nav>
+                  <a href="#" class="signIn pullLeft">Sign in</a>
+                  <div class="toolFree pullLeft">
+                     Toll-Free Number
+                     <span>1800-833-4343</span>
+                  </div>
+               </div>
+               <a href="#" class="offers">
+                  <img src="images/h_offers.png" alt="">
+               </a>
+            </div>
+         </header>
+         <!--  -->
+         <article id="homePage" class="contentMain">
+            <div id="fullPage">
+               <section id="findTempo" class="section">
+                  <div class="wrapper">
+                     <h1>Find a tempo near you</h1>
+                     <form action="#">
+                        <fieldset>
+                           <div class="cityOption clearfix">
+                              <label for="withinCity" class="checked pullLeft">
+                              <input type="radio" name="city" id="withinCity" checked required>
+                              Within City
+                              </label>
+                              <label for="outsideCity" class="pullLeft">
+                              <input type="radio" name="city" id="outsideCity" required>
+                              Outside City
+                              </label>
+                           </div>
+                           <div class="findFilter clearfix">
+                              <div class="selectCity pullLeft">
+                                 <span class="custom-dropdown custom-dropdown--white">
+                                    <select class="custom-dropdown__select" name="selectcity" id="" required>
+                                       <option value="0" selected="selected">-Select city-</option>
+                                       <option value="1">Goa</option>
+                                       <option value="2">Mumbai</option>
+                                       <option value="3">Pune</option>
+                                       <option value="4">Bangalore</option>
+                                    </select>
+                                 </span>
+                              </div>
+                              <div class="fromTo pullLeft">
+                                 <input type="text" class="pullLeft" placeholder="From" name="from" id="cityFrom" autocomplete="on" required>
+                                 <input type="text" class="pullRight" placeholder="To" name="to" id="cityTo" autocomplete="on" required>
+                              </div>
+                              <div class="dateTime pullLeft">
+                                 <div class="form-group pullLeft">
+                                    <div class="input-group date" id="date">
+                                       <input type="text" class="form-control" placeholder="Date" name="date"required />
+                                       <span class="input-group-addon">&nbsp;</span>
+                                    </div>
+                                 </div>
+                                 <div class="form-group pullRight">
+                                    <div class="input-group date" id="time">
+                                       <input type="text" class="form-control" placeholder="Time" name="time"required />
+                                       <span class="input-group-addon">&nbsp;</span>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="submission pullLeft">
+                                 <button type="submit" class="defaultBtn pullLeft">Find tempos</button>
+                              </div>
+                           </div>
+                        </fieldset>
+                     </form>
+                     <div class="hateToFill">
+                        <h6>Hate to fill the form?</h6>
+                        <div class="callUs">
+                           Call us on our Toll-Free Number
+                           <span>1800-833-4343</span>
+                        </div>
+                     </div>
+                  </div>
+               </section>
+               <!--  -->
+            </div>
 
-<body>
-	<div id="main">
-    	<div class="wrapper">
-    		
-            Sample Text
-            
-        </div><!--wrapper-->
-    </div><!--main-->
-</body>
+            <!-- <section id="howitWorks"></section> -->
+
+            <section id="howitWorks">
+               <div class="clearfix">
+                  <a href="#" class="videoPopup_open pullLeft"><img src="images/video_thumb.jpg" alt=""></a>
+                  <div class="desc">
+                     <h2>How it works</h2>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                  </div>
+               </div>
+            </section>
+            <!--  -->
+            <section id="theProcess" class="gradient">
+               <div class="wrapper">
+                  <h3>The Process</h3>
+               </div>
+               <div class="processHolder">
+                  <img src="images/process_path.png" alt="">
+                  <span class="truck wow move" data-wow-delay="5s"><img src="images/process_truck.png" alt=""></span>
+                  <div class="binkImg wow fadeIn" data-wow-delay="10s">
+                     <div class="waves">
+                        <span class="wave1"></span>
+                        <span class="wave2"></span>
+                        <span class="wave3"></span>
+                     </div>
+                     <img src="images/truck.png" alt="" class="smallTruck">
+                  </div>
+                  <div class="processSteps wow fadeIn" id="step1" data-wow-delay="1s">
+                     <h5>Book a tempo</h5>
+                     <p>Book through our website, app or toll-free number</p>
+                     <span><strong>1</strong></span>
+                  </div>
+                  <div class="processSteps wow fadeIn" id="step2" data-wow-delay="3s">
+                     <span><strong>2</strong></span>
+                     <h5>Locate Vehicle</h5>
+                     <p>The nearest tempo or vehicle is located based on your needs</p>
+                  </div>
+                  <div class="processSteps wow fadeIn" id="step3" data-wow-delay="7.5s">
+                     <h5>Confirm Trip</h5>
+                     <p>Tempo or vehicle allocated to you after confirmation</p>
+                     <span><strong>3</strong></span>
+                  </div>
+                  <div class="processSteps wow fadeIn" id="step4" data-wow-delay="10s">
+                     <h5>Track Status</h5>
+                     <p>Track through App, SMS or Web to see delivery status</p>
+                     <span><strong>4</strong></span>
+                  </div>
+               </div>
+
+               <div class="mobProcess owl-carousel owl-theme">
+                  <div class="mobOne">
+                     <h5>Book a tempo</h5>
+                     <p>Book through our website, app or toll-free number</p>
+                     <img src="images/mob_process1.png" alt="one" title="1">
+                  </div>
+                  <div class="mobTwo">
+                     <h5>Locate Vehicle</h5>
+                     <p>The nearest tempo or vehicle is located based on your needs</p>
+                     <img src="images/mob_process2.png" alt="two" title="2">
+                  </div>
+                  <div class="mobThree">
+                     <h5>Confirm Trip</h5>
+                     <p>Tempo or vehicle allocated to you after confirmation</p>
+                     <img src="images/mob_process2.png" alt="three" title="3">
+                  </div>
+                  <div class="mobFour">
+                     <h5>Track Status</h5>
+                     <p>Track through App, SMS or Web to see delivery status</p>
+                     <img src="images/mob_process3.png" alt="four" title="4">
+                  </div>
+               </div>
+            </section>
+            <!--  -->
+            <section id="opreating">
+               <div class="wrapper">
+                  <h3>CURRENTLY OPREATING IN THESE CITIES</h3>
+                  <ul class="clearfix">
+                     <li>
+                        <img src="images/opreating_1.jpg" alt="">
+                        <h4>Goa</h4>
+                        <span>&nbsp;</span>
+                     </li>
+                     <li>
+                        <img src="images/opreating_2.jpg" alt="">
+                        <h4>Mumbai</h4>
+                        <span>&nbsp;</span>
+                     </li>
+                     <li>
+                        <img src="images/opreating_3.jpg" alt="">
+                        <h4>Pune</h4>
+                        <span>&nbsp;</span>
+                     </li>
+                     <li>
+                        <img src="images/opreating_4.jpg" alt="">
+                        <h4>Bangalore</h4>
+                        <span>&nbsp;</span>
+                     </li>
+                  </ul>
+               </div>
+            </section>
+            <!--  -->
+         </article>
+         <!--  -->
+         <footer id="footer">
+            <div class="wrapper">
+               <div class="clearfix">
+                  <a href="index.html" class="logo pullLeft"><img src="images/f_logo.png" alt=""></a>
+                  <ul class="fNav">
+                     <li><a href="farecalulator.html">FARE CALCULATOR</a></li>
+                     <li><a href="#">TERMS</a></li>
+                     <li><a href="#">PRIVACY POLICY</a></li>
+                     <li><a href="aboutus.html">ABOUT</a></li>
+                     <li><a href="contact.html">CONTACT</a></li>
+                  </ul>
+                  <ul class="fSocial pullRight">
+                     <li><a href="#"><img src="images/f_social01.png" alt=""></a></li>
+                     <li><a href="#"><img src="images/f_social02.png" alt=""></a></li>
+                     <li><a href="#"><img src="images/f_social03.png" alt=""></a></li>
+                  </ul>
+               </div>
+               <p>Copyright © Tempogo.com. 2015-2016  |  All rights reserved</p>
+            </div>
+         </footer>
+         <!--  -->
+      </div>
+      <!-- Main -->
+      <div id="videoPopup">
+         <a href="#" class="videoPopup_close">X</a>
+         <div class="videoWrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/_VJl0Qq4aNk" frameborder="0" allowfullscreen></iframe>
+         </div>
+      </div>
+   </body>
 </html>
